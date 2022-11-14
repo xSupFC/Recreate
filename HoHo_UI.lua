@@ -345,9 +345,7 @@ function hoho:Window(hub, the_game_name, main_color)
 	SettingBt.ImageColor3 = Color3.fromRGB(0, 0, 0)
 	
 	SettingBt.MouseButton1Click:Connect(function()
-		pcall(function()
-			SettingFrame.Visible = not SettingFrame.Visible
-		end)
+	    hoho:Nof("Script Created by SupLua#0945", 10)
 	end)
 
 	Minimize.Name = "Minimize"
