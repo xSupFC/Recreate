@@ -234,6 +234,13 @@ Starter:SetCore("SendNotification",{
 }) 
 end
 
+--// Credit (can change without permission!)
+if System.AutoCredit == true then
+  Notification("Andesite Hub", "Created by SupLua#0945", 20)
+elseif System.AutoCredit == false then
+  print("nil")
+end
+
 local Menus = {}
 function Menus:Button(text, callback)
 
