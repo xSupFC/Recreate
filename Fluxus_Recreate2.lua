@@ -257,7 +257,7 @@ function library:Window(options)
         tab_option.BackgroundTransparency = 1.000
         tab_option.Position = UDim2.new(0.174999997, 0, 0.174999997, 0)
         tab_option.Size = UDim2.new(0, 25, 0, 25)
-        tab_option.Image = "rbxassetid://" .. tostring(Logo)
+        tab_option.Image = Logo
         tab_option.ScaleType = Enum.ScaleType.Fit
 
         local tabshell_corner = Instance.new("UICorner")
