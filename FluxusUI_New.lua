@@ -117,8 +117,8 @@ function library:Window(options)
     Mover.BorderSizePixel = 0
     Mover.Position = UDim2.new(0.274229079, 0, 0.191011235, 0)
     Mover.Size = UDim2.new(0, 70, 0, 360)
-    Mover.Active = true
-    Mover.Draggable = true
+    --Mover.Active = true
+    --Mover.Draggable = true
 
 local an = Instance.new("ScreenGui")
 
