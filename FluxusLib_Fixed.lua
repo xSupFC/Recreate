@@ -49,8 +49,14 @@ for i,v in pairs(game.CoreGui:GetChildren()) do
     end
 end
 
+for i,v in pairs(game.CoreGui:GetChildren()) do
+    if v.Name == "FluxusMenu" then 
+        v:Destroy()
+    end
+end
+
 function library:Window(options)
-    local TitleUI = options.Title or "Kronos Lib"
+    local TitleUI = options.Title or "Fluxus Lib"
     local Accent = options.Accent or Color3.fromRGB(203, 145, 242)
     local Toggle_Key = options.ToggleKey or Enum.KeyCode.LeftBracket
 
@@ -68,10 +74,15 @@ function library:Window(options)
     Mover.Position = UDim2.new(0.274229079, 0, 0.191011235, 0)
     Mover.Size = UDim2.new(0, 70, 0, 360)
 
+local an = Instance.new("ScreenGui")
+
+an.Name = "FluxusMenu"
+an.Parent = game.CoreGui
+
 local Toggle = Instance.new("TextButton")
 
 Toggle.Name = "Toggle"
-Toggle.Parent = Fluxus
+Toggle.Parent = an
 Toggle.BackgroundColor3 = Color3.fromRGB(40, 40, 60)
 Toggle.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 Toggle.Size = UDim2.new(0, 50, 0, 50)
