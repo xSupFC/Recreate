@@ -73,6 +73,8 @@ function library:Window(options)
     Mover.BorderSizePixel = 0
     Mover.Position = UDim2.new(0.274229079, 0, 0.191011235, 0)
     Mover.Size = UDim2.new(0, 70, 0, 360)
+    Mover.Active = true
+    Mover.Draggable = true
 
 local an = Instance.new("ScreenGui")
 
@@ -101,7 +103,7 @@ game.CoreGui:FindFirstChild("Fluxus").Enabled = not game.CoreGui:FindFirstChild(
 end)
 
     dragify(Toggle)
-    dragify(Mover)
+    --dragify(Mover)
 
     local Main = Instance.new("Frame")
     Main.Name = "Main"
