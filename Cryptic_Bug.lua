@@ -199,7 +199,7 @@ elseif theme == "WhiteTheme" then
     elementFolder.Name = "elementFolder"
     elementFolder.Parent = elements
 
-    Cryp:DragUI(elements, MainLib)
+    Cryp:DragUI(tabMain, MainLib)
 
     function Crypt:AddTab(tab)
         tab = tab or "tab"
