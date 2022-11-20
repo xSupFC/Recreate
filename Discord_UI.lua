@@ -1,4 +1,8 @@
-﻿local DiscordLib = {}
+﻿pcall(function()
+  game.CoreGui:FindFirstChild("Discord"):Destroy()
+end)
+
+local DiscordLib = {}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
@@ -121,6 +125,28 @@ function DiscordLib:Window(text)
 	MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
 	MainFrame.Size = UDim2.new(0, 681, 0, 396)
 
+local Toggle = Instance.new("TextButton")
+
+Toggle.Name = "Toggle"
+Toggle.Parent = Discord
+Toggle.BackgroundColor3 = Color3.fromRGB(40, 40, 60)
+Toggle.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+Toggle.Size = UDim2.new(0, 50, 0, 50)
+Toggle.Font = Enum.Font.Code
+Toggle.Text = "AN"
+Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+Toggle.TextScaled = true
+Toggle.Visible = false
+Toggle.AutoButtonColor = false
+
+Instance.new("UICorner",Toggle)
+
+Toggle.MouseButton1Down:connect(function()
+pcall(function()
+game.CoreGui:FindFirstChild("Discord").Enabled = not game.CoreGui:FindFirstChild("Discord").Enabled
+ end)
+end)
+
 	TopFrame.Name = "TopFrame"
 	TopFrame.Parent = MainFrame
 	TopFrame.BackgroundColor3 = Color3.fromRGB(32, 34, 37)
@@ -145,7 +171,7 @@ function DiscordLib:Window(text)
 	Title.Size = UDim2.new(0, 192, 0, 23)
 	Title.Font = Enum.Font.Gotham
 	Title.Text = text
-	Title.TextColor3 = Color3.fromRGB(99, 102, 109)
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Title.TextSize = 13.000
 	Title.TextXAlignment = Enum.TextXAlignment.Left
 
