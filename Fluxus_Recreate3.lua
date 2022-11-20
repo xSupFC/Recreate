@@ -66,7 +66,7 @@ function library:Window(options)
     Mover.BackgroundTransparency = 1.000
     Mover.BorderSizePixel = 0
     Mover.Position = UDim2.new(0.274229079, 0, 0.191011235, 0)
-    Mover.Size = UDim2.new(0, 70, 0, 400)
+    Mover.Size = UDim2.new(0, 70, 0, 360)
 
     dragify(Mover)
 
@@ -76,7 +76,7 @@ function library:Window(options)
     Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Main.BackgroundTransparency = 1.000
     Main.BorderSizePixel = 0
-    Main.Size = UDim2.new(0, 500, 0, 400)
+    Main.Size = UDim2.new(0, 500, 0, 360)
     Main.ClipsDescendants = false
 
     local Main_Layout = Instance.new("UIListLayout")
@@ -88,7 +88,7 @@ function library:Window(options)
     _1LeftSide.Name = "1LeftSide"
     _1LeftSide.Parent = Main
     _1LeftSide.BackgroundColor3 = Color3.fromRGB(44, 43, 48)
-    _1LeftSide.Size = UDim2.new(0, 70, 0, 400)
+    _1LeftSide.Size = UDim2.new(0, 70, 0, 360)
     _1LeftSide.ClipsDescendants = false
 
     local leftside_corner = Instance.new("UICorner")
@@ -102,7 +102,7 @@ function library:Window(options)
     hider_2.BackgroundColor3 = Color3.fromRGB(44, 43, 48)
     hider_2.BorderSizePixel = 0
     hider_2.Position = UDim2.new(0.914285719, 0, 0, 0)
-    hider_2.Size = UDim2.new(0, 6, 0, 400)
+    hider_2.Size = UDim2.new(0, 6, 0, 360)
 
     local Main_Logo = Instance.new("TextButton")
     Main_Logo.Name = "Main_Logo"
@@ -180,7 +180,7 @@ function library:Window(options)
     _2MiddleSide.BackgroundColor3 = Color3.fromRGB(36, 36, 38)
     _2MiddleSide.BorderSizePixel = 0
     _2MiddleSide.Position = UDim2.new(0.140000001, 0, 0, 0)
-    _2MiddleSide.Size = UDim2.new(0, 150, 0, 400)
+    _2MiddleSide.Size = UDim2.new(0, 150, 0, 360)
     _2MiddleSide.ClipsDescendants = true
 
     local _3Container = Instance.new("Frame")
@@ -202,18 +202,18 @@ function library:Window(options)
     hider.Parent = _3Container
     hider.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
     hider.BorderSizePixel = 0
-    hider.Size = UDim2.new(0, 6, 0, 400)
+    hider.Size = UDim2.new(0, 6, 0, 360)
 
     local mid_toggle = false
     Toggle_Mid.MouseButton1Click:Connect(function()
         if mid_toggle == false then 
             mid_toggle = true
             TweenService:Create(Toggle_Mid, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Rotation = 360}):Play()
-            TweenService:Create(_2MiddleSide, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 0, 0, 400)}):Play()
+            TweenService:Create(_2MiddleSide, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 0, 0, 360)}):Play()
         else
             mid_toggle = false
             TweenService:Create(Toggle_Mid, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Rotation = 180}):Play()
-            TweenService:Create(_2MiddleSide, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 150, 0, 400)}):Play()
+            TweenService:Create(_2MiddleSide, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 150, 0, 360)}):Play()
         end
     end)
 
@@ -272,7 +272,7 @@ function library:Window(options)
         middle_scroll.BackgroundTransparency = 1.000
         middle_scroll.BorderSizePixel = 0
         middle_scroll.Position = UDim2.new(0.0799999982, 0, 0.0225000009, 0)
-        middle_scroll.Size = UDim2.new(0, 125, 0, 380)
+        middle_scroll.Size = UDim2.new(0, 125, 0, 340)
         middle_scroll.ScrollBarThickness = 0
 
         local middle_layout = Instance.new("UIListLayout")
@@ -286,7 +286,7 @@ function library:Window(options)
         end)
 
         for i,v in pairs(_2MiddleSide:GetChildren()) do
-            v.Size = UDim2.new(0,0,0,380)
+            v.Size = UDim2.new(0,0,0,340)
         end
 
         tab_shell.MouseButton1Click:Connect(function()
@@ -298,12 +298,12 @@ function library:Window(options)
             TweenService:Create(tab_shell, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {BackgroundTransparency = 0.950}):Play()
 
             for i,v in pairs(_2MiddleSide:GetChildren()) do
-                TweenService:Create(v, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 0, 0, 380)}):Play()
+                TweenService:Create(v, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 0, 0, 340)}):Play()
             end
 
             for i,v in pairs(_3Container:GetChildren()) do 
                 if v.Name == "NewPage" then 
-                    TweenService:Create(v, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 0, 0, 400)}):Play()
+                    TweenService:Create(v, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 0, 0, 360)}):Play()
                 end
             end
             wait(.3)
@@ -407,7 +407,7 @@ function library:Window(options)
                 NewPage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 NewPage.BackgroundTransparency = 1.000
                 NewPage.BorderSizePixel = 0
-                NewPage.Size = UDim2.new(0, 280, 0, 400)
+                NewPage.Size = UDim2.new(0, 280, 0, 360)
                 NewPage.ClipsDescendants = true
 
                 local page_name = Instance.new("TextLabel")
@@ -431,7 +431,7 @@ function library:Window(options)
                 InnerPage.BackgroundTransparency = 1.000
                 InnerPage.BorderSizePixel = 0
                 InnerPage.Position = UDim2.new(0, 0, 0.109999999, 0)
-                InnerPage.Size = UDim2.new(0, 280, 0, 345)
+                InnerPage.Size = UDim2.new(0, 280, 0, 305)
                 InnerPage.ScrollBarThickness = 3
 
                 local innerpage_layout = Instance.new("UIListLayout")
@@ -443,7 +443,7 @@ function library:Window(options)
 
                 for i,v in pairs(_3Container:GetChildren()) do 
                     if v.Name == "NewPage" then 
-                        NewPage.Size = UDim2.new(0, 0, 0, 400)
+                        NewPage.Size = UDim2.new(0, 0, 0, 360)
                     end
                 end
 
@@ -453,9 +453,9 @@ function library:Window(options)
                         if v:IsA("TextButton") then
                             for i2, pname in next, _3Container:GetChildren() do 
                                 if pname:FindFirstChild("page_name") then
-                                    if v.Sec_Frame.BackgroundColor3 == Color3.fromRGB(255, 255, 255) and middle_scroll.Size == UDim2.new(0,125,0,380) then
+                                    if v.Sec_Frame.BackgroundColor3 == Color3.fromRGB(255, 255, 255) and middle_scroll.Size == UDim2.new(0,125,0,340) then
                                         if v.Text == pname.page_name.Text and v.TextColor3 == Color3.fromRGB(255,255,255) then
-                                            TweenService:Create(pname, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 280, 0, 400)}):Play()
+                                            TweenService:Create(pname, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 280, 0, 360)}):Play()
                                         end
                                     end
                                 end
@@ -476,11 +476,11 @@ function library:Window(options)
 
                     for i,v in pairs(_3Container:GetChildren()) do 
                         if v.Name == "NewPage" then 
-                            TweenService:Create(v, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 0, 0, 400)}):Play()
+                            TweenService:Create(v, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 0, 0, 360)}):Play()
                         end
                     end
                     wait(.3)
-                    TweenService:Create(NewPage, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 280, 0, 400)}):Play()
+                    TweenService:Create(NewPage, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 280, 0, 360)}):Play()
                 end)
 
                 innerpage_layout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
@@ -531,7 +531,7 @@ function library:Window(options)
                         local uiButton = Instance.new("TextButton")
                         uiButton.Name = "uiButton"
                         uiButton.Parent = InnerPage
-                        uiButton.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+                        uiButton.BackgroundColor3 = Color3.fromRGB(203, 145, 242)
                         uiButton.BorderSizePixel = 0
                         uiButton.Size = UDim2.new(0, 258, 0, 30)
                         uiButton.AutoButtonColor = false
@@ -704,7 +704,7 @@ function library:Window(options)
                         local uiKeybind = Instance.new("TextButton")
                         uiKeybind.Name = "uiKeybind"
                         uiKeybind.Parent = InnerPage
-                        uiKeybind.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+                        uiKeybind.BackgroundColor3 = Color3.fromRGB(203, 145, 242)
                         uiKeybind.BorderSizePixel = 0
                         uiKeybind.Size = UDim2.new(0, 258, 0, 30)
                         uiKeybind.AutoButtonColor = false
@@ -766,7 +766,7 @@ function library:Window(options)
                         local text_shell = Instance.new("TextButton")
                         text_shell.Name = "text_shell"
                         text_shell.Parent = InnerPage
-                        text_shell.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+                        text_shell.BackgroundColor3 = Color3.fromRGB(203, 145, 242)
                         text_shell.BorderSizePixel = 0
                         text_shell.Size = UDim2.new(0, 258, 0, 30)
                         text_shell.AutoButtonColor = false
@@ -816,7 +816,7 @@ function library:Window(options)
                         local uiDropdown = Instance.new("TextButton")
                         uiDropdown.Name = "uiDropdown"
                         uiDropdown.Parent = InnerPage
-                        uiDropdown.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+                        uiDropdown.BackgroundColor3 = Color3.fromRGB(203, 145, 242)
                         uiDropdown.BorderSizePixel = 0
                         uiDropdown.Size = UDim2.new(0, 258, 0, 30)
                         uiDropdown.AutoButtonColor = false
@@ -889,7 +889,7 @@ function library:Window(options)
                             local option = Instance.new("TextButton")
                             option.Name = "option"
                             option.Parent = Dropdown_Container
-                            option.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+                            option.BackgroundColor3 = Color3.fromRGB(203, 145, 242)
                             option.BorderSizePixel = 0
                             option.Size = UDim2.new(0, 258, 0, 20)
                             option.AutoButtonColor = false
@@ -937,7 +937,7 @@ function library:Window(options)
                                 local option = Instance.new("TextButton")
                                 option.Name = "option"
                                 option.Parent = Dropdown_Container
-                                option.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+                                option.BackgroundColor3 = Color3.fromRGB(203, 145, 242)
                                 option.BorderSizePixel = 0
                                 option.Size = UDim2.new(0, 258, 0, 20)
                                 option.AutoButtonColor = false
