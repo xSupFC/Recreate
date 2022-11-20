@@ -68,7 +68,7 @@ function library:Window(options)
     Mover.Position = UDim2.new(0.274229079, 0, 0.191011235, 0)
     Mover.Size = UDim2.new(0, 70, 0, 360)
 
-local Toggle = Instance.new("Fluxus")
+local Toggle = Instance.new("TextButton")
 
 Toggle.Name = "Toggle"
 Toggle.Parent = Fluxus
