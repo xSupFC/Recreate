@@ -188,7 +188,7 @@ function library:Window(options)
     _3Container.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
     _3Container.BorderSizePixel = 0
     _3Container.Position = UDim2.new(0.439999998, 0, 0, 0)
-    _3Container.Size = UDim2.new(0, 280, 0, 400)
+    _3Container.Size = UDim2.new(0, 280, 0, 360)
     _3Container.ClipsDescendants = true
     _3Container.Name = "3Container"
 
