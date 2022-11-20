@@ -1,7 +1,3 @@
-﻿pcall(function()
-  game.CoreGui:FindFirstChild("Discord"):Destroy()
-end)
-
 local DiscordLib = {}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
