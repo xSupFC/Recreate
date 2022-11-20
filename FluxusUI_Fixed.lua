@@ -79,7 +79,6 @@ Toggle.Font = Enum.Font.Code
 Toggle.Text = "F"
 Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
 Toggle.TextScaled = true
-Toggle.Visible = false
 Toggle.AutoButtonColor = false
 
 Instance.new("UICorner",Toggle)
