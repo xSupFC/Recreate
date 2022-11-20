@@ -46,7 +46,7 @@ for _,v in pairs(game.CoreGui:GetChildren()) do
    end
 end 
 
-function Library:DragUI(frame, parent)
+function Cryp:DragUI(frame, parent)
 	parent = parent or frame
 	
 	local gui = parent
@@ -135,7 +135,7 @@ elseif theme == "WhiteTheme" then
     MainLib.Size = UDim2.new(0, 469, 0, 350)
     MainLib.BorderColor3 = theme.HeaderColor
 
-    Library:DragUI(MainLib, MainLib)
+    Cryp:DragUI(MainLib, MainLib)
 
     headerLine.Name = "headerLine"
     headerLine.Parent = MainLib
