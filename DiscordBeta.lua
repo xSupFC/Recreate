@@ -1,3 +1,9 @@
+for i,v in pairs(game.CoreGui:GetChildren()) do
+  if v.Name == "Discord" then
+    v:Destroy()
+  end
+end
+
 local DiscordLib = {}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
