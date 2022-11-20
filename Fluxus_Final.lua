@@ -68,6 +68,29 @@ function library:Window(options)
     Mover.Position = UDim2.new(0.274229079, 0, 0.191011235, 0)
     Mover.Size = UDim2.new(0, 70, 0, 360)
 
+local Toggle = Instance.new("Fluxus")
+
+Toggle.Name = "Toggle"
+Toggle.Parent = Fluxus
+Toggle.BackgroundColor3 = Color3.fromRGB(40, 40, 60)
+Toggle.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+Toggle.Size = UDim2.new(0, 50, 0, 50)
+Toggle.Font = Enum.Font.Code
+Toggle.Text = "F"
+Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+Toggle.TextScaled = true
+Toggle.Visible = false
+Toggle.AutoButtonColor = false
+
+Instance.new("UICorner",Toggle)
+
+Toggle.MouseButton1Down:connect(function()
+pcall(function()
+game.CoreGui:FindFirstChild("Fluxus").Enabled = not game.CoreGui:FindFirstChild("Fluxus").Enabled
+ end)
+end)
+
+    dragify(Toggle)
     dragify(Mover)
 
     local Main = Instance.new("Frame")
