@@ -4,6 +4,12 @@ for i,v in pairs(game.CoreGui:GetChildren()) do
   end
 end
 
+for i,v in pairs(game.CoreGui:GetChildren()) do
+  if v.Name == "Lol" then
+    v:Destroy()
+  end
+end
+
 local DiscordLib = {}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -127,15 +133,20 @@ function DiscordLib:Window(text)
 	MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
 	MainFrame.Size = UDim2.new(0, 681, 0, 396)
 
+local ah = Instance.new("ScreenGui")
+
+ah.Name = "Lol"
+ah.Parent = game.CoreGui
+
 local Toggle = Instance.new("TextButton")
 
 Toggle.Name = "Toggle"
-Toggle.Parent = Discord
+Toggle.Parent = ah
 Toggle.BackgroundColor3 = Color3.fromRGB(40, 40, 60)
 Toggle.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 Toggle.Size = UDim2.new(0, 50, 0, 50)
 Toggle.Font = Enum.Font.Code
-Toggle.Text = "AN"
+Toggle.Text = "D"
 Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
 Toggle.TextScaled = true
 Toggle.AutoButtonColor = false
