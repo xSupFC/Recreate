@@ -135,8 +135,6 @@ elseif theme == "WhiteTheme" then
     MainLib.Size = UDim2.new(0, 469, 0, 350)
     MainLib.BorderColor3 = theme.HeaderColor
 
-    Cryp:DragUI(MainLib, MainLib)
-
     headerLine.Name = "headerLine"
     headerLine.Parent = MainLib
     headerLine.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -200,6 +198,8 @@ elseif theme == "WhiteTheme" then
 
     elementFolder.Name = "elementFolder"
     elementFolder.Parent = elements
+
+    Cryp:DragUI(elements, MainLib)
 
     function Crypt:AddTab(tab)
         tab = tab or "tab"
