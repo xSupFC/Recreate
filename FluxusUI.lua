@@ -4,6 +4,50 @@ local TweenService = game:GetService("TweenService")
 local TextService = game:GetService("TextService")
 local UserInputService = game:GetService("UserInputService")
 
+function library:Drag(frame, parent)
+	parent = parent or frame
+	
+	local gui = parent
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+
+	local function update(input)
+		local delta = input.Position - dragStart
+		game:GetService("TweenService"):Create(gui,TweenInfo.new(0.25), {
+			Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		}):Play()
+		--gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+
 function dragify(Frame)
     local dragToggle = nil
     local dragSpeed = .25
@@ -103,7 +147,7 @@ game.CoreGui:FindFirstChild("Fluxus").Enabled = not game.CoreGui:FindFirstChild(
 end)
 
     dragify(Toggle)
-    --dragify(Mover)
+    library:Drag(Mover, Mover)
 
     local Main = Instance.new("Frame")
     Main.Name = "Main"
