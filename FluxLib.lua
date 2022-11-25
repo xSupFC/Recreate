@@ -136,7 +136,7 @@ Toggle.Font = Enum.Font.Code
 Toggle.Text = "pcall"
 Toggle.TextColor3 = Color3.fromRGB(0, 170, 255)
 Toggle.TextScaled = true
-Toggle.Visible = false
+Toggle.Visible = true 
 Toggle.AutoButtonColor = false
 
 Instance.new("UICorner",Toggle)
