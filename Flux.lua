@@ -1,3 +1,8 @@
+pcall(function()
+  game.CoreGui:FindFirstChild("FluxLib"):Destroy()
+  game.CoreGui:FindFirstChild("lol"):Destroy()
+end)
+
 local Flux = {RainbowColorValue = 0, HueSelectionPosition = 0}
 local PresetColor = Color3.fromRGB(66, 134, 255)
 local UserInputService = game:GetService("UserInputService")
@@ -114,6 +119,33 @@ function Flux:Window(text, bottom,mainclr,toclose)
 	MainCorner.CornerRadius = UDim.new(0, 5)
 	MainCorner.Name = "MainCorner"
 	MainCorner.Parent = MainFrame
+
+local an = Instance.new("ScreenGui")
+
+an.Name = "lol"
+an.Parent = game.CoreGui
+
+local Toggle = Instance.new("TextButton")
+
+Toggle.Name = "Toggle"
+Toggle.Parent = an
+Toggle.BackgroundColor3 = Color3.fromRGB(40, 40, 60)
+Toggle.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+Toggle.Size = UDim2.new(0, 50, 0, 50)
+Toggle.Font = Enum.Font.Code
+Toggle.Text = "pcall"
+Toggle.TextColor3 = Color3.fromRGB(0, 170, 255)
+Toggle.TextScaled = true
+Toggle.Visible = false
+Toggle.AutoButtonColor = false
+
+Instance.new("UICorner",Toggle)
+
+Toggle.MouseButton1Down:connect(function()
+pcall(function()
+game.CoreGui:FindFirstChild("FluxLib").Enabled = not game.CoreGui:FindFirstChild("FluxLib").Enabled
+ end)
+end)
 
 	LeftFrame.Name = "LeftFrame"
 	LeftFrame.Parent = MainFrame
