@@ -146,8 +146,8 @@ Toggle.BackgroundColor3 = Color3.fromRGB(40, 40, 60)
 Toggle.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 Toggle.Size = UDim2.new(0, 50, 0, 50)
 Toggle.Font = Enum.Font.Code
-Toggle.Text = "D"
-Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+Toggle.Text = "pcall"
+Toggle.TextColor3 = Color3.fromRGB(0, 170, 255)
 Toggle.TextScaled = true
 Toggle.AutoButtonColor = false
 
