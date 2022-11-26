@@ -2304,8 +2304,8 @@ end)
                     toggled = true
                     callback(toggled)
                 end
-               ChannelHolder.CanvasSize = UDim2.new(0,0,0,ChannelHolderLayout.AbsoluteContentSize.
-            end
+               ChannelHolder.CanvasSize = UDim2.new(0,0,0,ChannelHolderLayout.AbsoluteContentSize.Y)
+			end
 
 			function ChannelContent:AddToggle5(text,default,callback)
 				local toggled = false
