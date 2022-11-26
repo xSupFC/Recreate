@@ -2215,7 +2215,7 @@ end)
                 local Toggle = Instance.new("TextButton")
                 Toggle.Name = "Toggle"
                 Toggle.Parent = ChannelHolder
-                Toggle.BackgroundColor3 = Color3.fromRGB(114, 137, 228)
+                Toggle.BackgroundColor3 = Color3.fromRGB(54, 57, 63)
                 Toggle.BackgroundTransparency = 0.1
                 Toggle.BorderSizePixel = 0
                 Toggle.AutoButtonColor = false
@@ -2246,7 +2246,7 @@ end)
                 ToggleImage.Name = "ToggleImage"
                 ToggleImage.Parent = Toggle
                 ToggleImage.BackgroundColor3 = Color3.fromRGB(70, 68, 79)
-                ToggleImage.Position = UDim2.new(0, 400, 0, 5)
+                ToggleImage.Position = UDim2.new(0, 380, 0, 5)
                 ToggleImage.BorderSizePixel = 0
                 ToggleImage.Size = UDim2.new(0, 20, 0, 20)
                 local ToggleImageCorner = Instance.new("UICorner")
