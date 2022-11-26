@@ -2208,7 +2208,105 @@ end)
 				end)
 				ChannelHolder.CanvasSize = UDim2.new(0,0,0,ChannelHolderLayout.AbsoluteContentSize.Y)
 			end
-			function ChannelContent:AddToggle(text,default,callback)
+
+            function ChannelContent:AddToggle(text,config,callback)
+                local ToggleImage = Instance.new("Frame")
+                
+                local Toggle = Instance.new("TextButton")
+                Toggle.Name = "Toggle"
+                Toggle.Parent = ChannelHolder
+                Toggle.BackgroundColor3 = Color3.fromRGB(114, 137, 228)
+                Toggle.BackgroundTransparency = 0.1
+                Toggle.BorderSizePixel = 0
+                Toggle.AutoButtonColor = false
+                Toggle.Size = UDim2.new(0, 401, 0, 30)
+                Toggle.Font = Enum.Font.Code
+                Toggle.Text = ""
+                Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+                Toggle.TextSize = 14.000
+                
+                local ToggleCorner = Instance.new("UICorner")
+                ToggleCorner.Name = "ToggleCorner"
+                ToggleCorner.CornerRadius = UDim.new(0, 5)
+                ToggleCorner.Parent = Toggle
+    
+                local ToggleLabel = Instance.new("TextLabel")
+                ToggleLabel.Name = "ToggleLabel"
+                ToggleLabel.Parent = Toggle
+                ToggleLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                ToggleLabel.BackgroundTransparency = 1.000
+                ToggleLabel.Position = UDim2.new(0, 13, 0, 0)
+                ToggleLabel.Size = UDim2.new(0, 200, 0, 30)
+                ToggleLabel.Font = Enum.Font.Gotham
+                ToggleLabel.Text = text
+                ToggleLabel.TextColor3 = Color3.fromRGB(225, 225, 225)
+                ToggleLabel.TextSize = 14.000
+                ToggleLabel.TextXAlignment = Enum.TextXAlignment.Left
+    
+                ToggleImage.Name = "ToggleImage"
+                ToggleImage.Parent = Toggle
+                ToggleImage.BackgroundColor3 = Color3.fromRGB(70, 68, 79)
+                ToggleImage.Position = UDim2.new(0, 400, 0, 5)
+                ToggleImage.BorderSizePixel = 0
+                ToggleImage.Size = UDim2.new(0, 20, 0, 20)
+                local ToggleImageCorner = Instance.new("UICorner")
+                ToggleImageCorner.Name = "ToggleImageCorner"
+                ToggleImageCorner.CornerRadius = UDim.new(0, 5)
+                ToggleImageCorner.Parent = ToggleImage
+    
+                local ToggleImage2 = Instance.new("Frame")
+                ToggleImage2.Name = "ToggleImage2"
+                ToggleImage2.Parent = ToggleImage
+                ToggleImage2.AnchorPoint = Vector2.new(0.5, 0.5)
+                ToggleImage2.BackgroundColor3 = Color3.fromRGB(0,170,255)
+                ToggleImage2.Position = UDim2.new(0, 10, 0, 10)
+                ToggleImage2.Visible = false
+    
+                local ToggleImage2Corner = Instance.new("UICorner")
+                ToggleImage2Corner.Name = "ToggleImageCorner"
+                ToggleImage2Corner.CornerRadius = UDim.new(0, 5)
+                ToggleImage2Corner.Parent = ToggleImage2
+                
+                Toggle.MouseEnter:Connect(function()
+                    TweenService:Create(
+                        ToggleLabel,
+                        TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
+                        {TextColor3 = Color3.fromRGB(0,170,255)}
+                    ):Play()
+                end)
+    
+                Toggle.MouseLeave:Connect(function()
+                    TweenService:Create(
+                        ToggleLabel,
+                        TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
+                        {TextColor3 = Color3.fromRGB(225, 225, 225)}
+                    ):Play()
+                end)
+                if config == nil then config = false end
+                local toggled = config or false
+                Toggle.MouseButton1Click:Connect(function()
+                    if toggled == false then
+                        toggled = true
+                        ToggleImage2.Visible = true
+                        ToggleImage2:TweenSize(UDim2.new(0, 21, 0, 21),"In","Quad",0.1,true)
+                    else
+                        toggled = false
+                        ToggleImage2:TweenSize(UDim2.new(0, 0, 0, 0),"In","Quad",0.1,true)
+                        wait(0.1)
+                        ToggleImage2.Visible = false
+                    end
+                    callback(toggled)
+                end)
+                
+                if config == true then
+                    ToggleImage2.Visible = true
+                    ToggleImage2:TweenSize(UDim2.new(0, 21, 0, 21),"In","Quad",0.1,true)
+                    toggled = true
+                    callback(toggled)
+                end
+            end
+
+			function ChannelContent:AddToggle5(text,default,callback)
 				local toggled = false
 				local Toggle = Instance.new("TextButton")
 				local ToggleTitle = Instance.new("TextLabel")
