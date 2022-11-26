@@ -2304,6 +2304,7 @@ end)
                     toggled = true
                     callback(toggled)
                 end
+               ChannelHolder.CanvasSize = UDim2.new(0,0,0,ChannelHolderLayout.AbsoluteContentSize.
             end
 
 			function ChannelContent:AddToggle5(text,default,callback)
@@ -3313,6 +3314,7 @@ end)
 function Lab:Set(b)
   LabelTitle.Text = "[-] "..b
 end
+return Lab
 			end
 			
 			function ChannelContent:AddBind(text, presetbind, callback)
